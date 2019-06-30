@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>云课堂</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/css/hover-min.css">
+    <link rel="stylesheet" href="../static/css/sweetalert.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/route.css">
+</head>
+
+<body>
+
+    <!--Head-->
+    <header class="edu-header">
+        <div class="edu-header-inner">
+            <a href="#" class="logo">
+                <img src="../static/img/logo/logo.png">
+            </a>
+            <nav class="header-nav ">
+                <a href="../index.html">首页</a>
+                <a href="../course-list.html">课程</a>
+                <a href="../course-learn.html">内容</a>
+                <a href="../course-video.html">学习</a>
+                <a href="../user">个人中心</a>
+            </nav>
+            <div class="header-search hvr-wobble-skew">
+                <form action="../search.html" class="header-search-form">
+                    <input name="search" class="form-control" title="search" placeholder="你想要的这里都有">
+                    <label class="header-search-ico fa fa-search"></label>
+                </form>
+            </div>
+            <div class="user-info">
+                <div class="shop-cart">
+                    <a href="#" id="shop-cart-link">
+                        <i class="fa fa-shopping-cart" id="shop-cart-icon">
+                        <span class="shopping_icon">0</span>
+                    </i> 购物车
+                    </a>
+                </div>
+                <div class="my-cart" id="shop-cart">
+                    <div class="cart-title-box clearfix">
+                        <h2 class="l">购物车</h2>
+                        <h5 class="r">已加入0门课程</h5>
+                    </div>
+                    <div class="cart-wrap">
+
+                        <!--无物品-->
+
+                        <div class="clear-cart" id="clear-cart" style="display: none">
+                            <span class="fa fa-shopping-cart cartIcon ">
+                        </span>
+                            <h3>
+                                这里好像，没东西诶
+                            </h3>
+                            <div class="text">
+                                快去这里选择你喜欢的课程吧
+                            </div>
+                        </div>
+                        <div class="cart-wrap-box" id="user-info-shop-cart">
+                            <ul>
+                                <li class="clearfix" data-goods-id="1">
+                                    <a href="#"><img class="l" src="../static/img/course/python2.jpg"> </a>
+                                    <div class="content-box l">
+                                        <a href="#">
+                                            <h3>Java入门到放弃</h3>
+                                        </a>
+                                        <p>
+                                            <span class="price l">￥999</span>
+                                            <span class="del r js-close">删除</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more-box clearfix">
+                            <div class="l show-box">
+                                <span class="text"><a href="#">我的订单中心</a></span>
+                            </div>
+                            <a href="#" class="r btn btn-danger go-cart">购物车</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- un login-->
+                <!--<div class="header-signin">-->
+                <!--<a href="login.html">登陆</a> /-->
+                <!--<a href="signup.html">注册</a>-->
+                <!--</div>-->
+
+                <!-- login -->
+                <div class="remind_warp">
+                    <i class="msg_remind" style="display: none;"></i>
+                    <a href="#">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </div>
+                <div class="set_btn user-card-box">
+                    <a href="#" class="user-card-item"><img src="../static/img/member/t.jpg"> </a>
+                </div>
+                <div class="g-user-card">
+                    <div class="card-inner">
+                        <div class="card-top clearfix">
+                            <a href="#" class="l"><img src="../static/img/member/t.jpg"> </a>
+                            <div class="card-top-right-box l">
+                                <a href="#">
+                                    <span class="name text-ellipsis">keac</span>
+                                </a>
+                                <div class="meta">
+                                    <a href="#">
+                                    经验
+                                    <b id="js-user-mp">707</b>
+                                </a>
+                                    <a href="#">
+                                    积分
+                                    <b id="js-user-credit">707</b>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-center-box">
+                            <ul class="clearfix">
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-book"></span>我的课程
+                                    </a>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-bars"></span> 订单中心
+                                    </a>
+                                    <i id="js-usercard-coupon-icon" style="display: none;"></i>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-truck"></span> 积分商城
+                                    </a>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-sliders"></span> 个人设置
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-history">
+                            <span class="history-item">
+                            <span class="tit text-ellipsis">Java入门到放弃</span>
+                            <span class="media-name text-ellipsis"> 2-1学习Java入门到放弃
+                            </span>
+                            <i class="fa fa-clock-o"></i>
+                            <a href="#" class="continue" title="学习Java入门到放弃">继续</a>
+                            </span>
+                        </div>
+                        <div class="card-sets clearfix">
+                            <a href="#" class="r">安全退出</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Top nav-->
+    <div class="top">
+        <div class="top-banner">
+            <div class="top-banner-inner">
+                <h1>路径选择</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div class="route-line">
+            <ul class="cbp_time-line">
+                <li>
+                    <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>
+						2333</span> <span>Html</span></time>
+                    <div class="cbp_tmicon fa fa-bandcamp"></div>
+                    <div class="cbp_tmlabel">
+                        <h2>Html</h2>
+                        <p>选课</p>
+                    </div>
+                </li>
+                <li>
+                    <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>
+						2333</span> <span>css</span></time>
+                    <div class="cbp_tmicon fa fa-bandcamp"></div>
+                    <div class="cbp_tmlabel">
+                        <h2>Css</h2>
+                        <p>选课</p>
+                    </div>
+                </li>
+                <li>
+                    <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>
+						2333</span> <span>javascript</span></time>
+                    <div class="cbp_tmicon fa fa-bandcamp"></div>
+                    <div class="cbp_tmlabel">
+                        <h2>javascript</h2>
+                        <p>选课</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-link">
+                <a href="#">企业合作</a>
+                <a href="#">人才招聘</a>
+                <a href="#">联系我们</a>
+                <a href="#">常见问题</a>
+                <a href="#">xx科技</a>
+            </div>
+            <div class="footer-copyright">
+                Copyright (C) 2017keac All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/sweetalert.min.js"></script>
+<script src="../static/js/script.js"></script>
+
+</html>

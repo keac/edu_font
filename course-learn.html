@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>云课堂</title>
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/hover-min.css">
+    <link rel="stylesheet" href="static/css/sweetalert.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body style="background-color: #fff">
+    <!--Head-->
+    <header class="edu-header">
+        <div class="edu-header-inner">
+            <a href="#" class="logo">
+                <img src="static/img/logo/logo.png">
+            </a>
+            <nav class="header-nav ">
+                <a href="index.html">首页</a>
+                <a href="course-list.html">课程</a>
+                <a href="course-learn.html">内容</a>
+                <a href="course-video.html">学习</a>
+                <a href="user">个人中心</a>
+            </nav>
+            <div class="header-search hvr-wobble-skew">
+                <form action="search.html" class="header-search-form">
+                    <input name="search" class="form-control" title="search" placeholder="你想要的这里都有">
+                    <label class="header-search-ico fa fa-search"></label>
+                </form>
+            </div>
+            <div class="user-info">
+                <div class="shop-cart">
+                    <a href="#" id="shop-cart-link">
+                        <i class="fa fa-shopping-cart" id="shop-cart-icon">
+                        <span class="shopping_icon">0</span>
+                    </i> 购物车
+                    </a>
+                </div>
+                <div class="my-cart" id="shop-cart">
+                    <div class="cart-title-box clearfix">
+                        <h2 class="l">购物车</h2>
+                        <h5 class="r">已加入0门课程</h5>
+                    </div>
+                    <div class="cart-wrap">
+
+                        <!--无物品-->
+
+                        <div class="clear-cart" id="clear-cart" style="display: none">
+                            <span class="fa fa-shopping-cart cartIcon ">
+                        </span>
+                            <h3>
+                                这里好像，没东西诶
+                            </h3>
+                            <div class="text">
+                                快去这里选择你喜欢的课程吧
+                            </div>
+                        </div>
+                        <div class="cart-wrap-box" id="user-info-shop-cart">
+                            <ul>
+                                <li class="clearfix" data-goods-id="1">
+                                    <a href="#"><img class="l" src="static/img/course/python2.jpg"> </a>
+                                    <div class="content-box l">
+                                        <a href="#">
+                                            <h3>Java入门到放弃</h3>
+                                        </a>
+                                        <p>
+                                            <span class="price l">￥999</span>
+                                            <span class="del r js-close">删除</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more-box clearfix">
+                            <div class="l show-box">
+                                <span class="text"><a href="#">我的订单中心</a></span>
+                            </div>
+                            <a href="#" class="r btn btn-danger go-cart">购物车</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- un login-->
+                <!--<div class="header-signin">-->
+                <!--<a href="login.html">登陆</a> /-->
+                <!--<a href="signup.html">注册</a>-->
+                <!--</div>-->
+
+                <!-- login -->
+                <div class="remind_warp">
+                    <i class="msg_remind" style="display: none;"></i>
+                    <a href="#">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </div>
+                <div class="set_btn user-card-box">
+                    <a href="#" class="user-card-item"><img src="static/img/member/t.jpg"> </a>
+                </div>
+                <div class="g-user-card">
+                    <div class="card-inner">
+                        <div class="card-top clearfix">
+                            <a href="#" class="l"><img src="static/img/member/t.jpg"> </a>
+                            <div class="card-top-right-box l">
+                                <a href="#">
+                                    <span class="name text-ellipsis">keac</span>
+                                </a>
+                                <div class="meta">
+                                    <a href="#">
+                                    经验
+                                    <b id="js-user-mp">707</b>
+                                </a>
+                                    <a href="#">
+                                    积分
+                                    <b id="js-user-credit">707</b>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-center-box">
+                            <ul class="clearfix">
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-book"></span>我的课程
+                                    </a>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-bars"></span> 订单中心
+                                    </a>
+                                    <i id="js-usercard-coupon-icon" style="display: none;"></i>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-truck"></span> 积分商城
+                                    </a>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-sliders"></span> 个人设置
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-history">
+                            <span class="history-item">
+                            <span class="tit text-ellipsis">Java入门到放弃</span>
+                            <span class="media-name text-ellipsis"> 2-1学习Java入门到放弃
+                            </span>
+                            <i class="fa fa-clock-o"></i>
+                            <a href="#" class="continue" title="学习Java入门到放弃">继续</a>
+                            </span>
+                        </div>
+                        <div class="card-sets clearfix">
+                            <a href="#" class="r">安全退出</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <section class="course-header-new">
+        <div class="container">
+
+            <!--面包屑-->
+            <div class="bread-crumb">
+                <ul class="breadcrumb">
+                    <li><a href="#">编程</a></li>
+                    <li><a href="#">小明</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">javascript</a></li>
+                </ul>
+            </div>
+
+            <!--加入课程前-->
+
+            <div class="row  ncedu-course-before clearfix" id="course-before">
+                <div class="pic col-md-5 col-xs-12">
+                    <img class="img-responsive" src="static/img/course/python2.jpg">
+                </div>
+                <div class="info col-md-7 col-xs-12 pull-right">
+                    <h1>
+                        小明带你入门Java到放弃
+                    </h1>
+                    <ul class="metas clearfix">
+                        <li class="bd">
+                            <i class="fa fa-book"></i>
+                            <p>
+                                课时（3）
+                            </p>
+                        </li>
+                        <li class="bd">
+                            <i class="fa fa-book"></i>
+                            <p>
+                                课时（3）
+                            </p>
+                        </li>
+                        <li class="bd">
+                            <i class="fa fa-book"></i>
+                            <p>
+                                课时（3）
+                            </p>
+                        </li>
+                        <li class="join">
+                            <a class="btn btn-primary" href="">加入课程</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--加入课程后-->
+
+            <div class="course-start  clearfix" id="course-start">
+                <div class="pic col-md-5 col-xs-12">
+                    <a href="#">
+                        <img src="static/img/course/python.jpg">
+                    </a>
+                </div>
+                <div class="info col-md-7 col-xs-12 pull-right">
+                    <div class="title-box">
+                        <h1>
+                            小明带你入门Java到放弃
+                        </h1>
+                    </div>
+                    <div class="info-box ">
+                        <ul class="metas clearfix">
+                            <li class="bd">
+                                <i class="fa fa-book"></i>
+                                <p>
+                                    课时（3）
+                                </p>
+                            </li>
+                            <li class="bd">
+                                <i class="fa fa-book"></i>
+                                <p>
+                                    课时（3）
+                                </p>
+                            </li>
+                            <li class="bd">
+                                <i class="fa fa-book"></i>
+                                <p>
+                                    课时（3）
+                                </p>
+                            </li>
+                            <li class="join">
+                                <a class="btn btn-primary" href="course-video.html">继续学习</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="class-schedule-info-box">
+                    <div class="clear"></div>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                            <span class="sr-only">40% 完成</span>
+                        </div>
+                    </div>
+                    目前已完成 1 个课程，加油哦！
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div id="main">
+        <section class="course-info-mai">
+            <div class="content col-md-9">
+                <!--课程简介-->
+                <div class="course-brief">
+                    简介：随着越来越多的人开始学Java。我们的小明大神特地推出如何放弃Java学习。
+                </div>
+                <!--课程简介END-->
+                <div class="course-menu">
+                    <ul>
+                        <li id="mod-chapters-nav" class="active"><a href="#">章节</a></li>
+                        <li id="note-content-nav"><a href="#">笔记</a></li>
+                        <li id="ask-content-nav"><a href="#">问答</a></li>
+                        <li id="comment-content-nav"><a href="#">评论</a></li>
+                    </ul>
+                </div>
+                <div id="disArea" class="lists-container list-wrap">
+
+                    <div id="mod-chapters" class="mod-chapters active">
+
+                        <div class="chapter">
+                            <h3 class="title">
+                                <i class="fa fa-th-list"></i>
+                                <span>
+                            第一章 课程介绍
+                        </span>
+                                <i class="fa fa-sort-desc"></i>
+                            </h3>
+                            <ul class="video">
+                                <li data-media-id="00001">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-1_认识小明
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00002">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-2_与小明做朋友
+                               </span>
+                                        <!--<i class="video-now">最近学习<em class="fa fa-free-code-camp  "></em></i>-->
+                                    </a>
+                                </li>
+                                <li data-media-id="00003">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-3_给小明递茶
+                               </span>
+
+                                    </a>
+                                </li>
+                                <li data-media-id="00004">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-4_走进小明
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00005">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-5_看望小明
+                               </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="chapter">
+                            <h3 class="title">
+                                <i class="fa fa-th-list"></i>
+                                <span>
+                            第二章 课程介绍
+                        </span>
+                                <i class="fa fa-sort-desc"></i>
+                            </h3>
+                            <ul class="video">
+                                <li data-media-id="00006">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-2_认识小明
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00007">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-2_与小明做朋友
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00008">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-3_给小明递茶
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00009">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-4_走进小明
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00010">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-5_看望小明
+                               </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="chapter">
+                            <h3 class="title">
+                                <i class="fa fa-th-list"></i>
+                                <span>
+                            第三章 课程介绍
+                        </span>
+                                <i class="fa fa-sort-desc"></i>
+                            </h3>
+                            <ul class="video">
+                                <li data-media-id="00011">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-2_认识小明
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00012">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-2_与小明做朋友
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00013">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-3_给小明递茶
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00014">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-4_走进小明
+                               </span>
+                                    </a>
+                                </li>
+                                <li data-media-id="00015">
+                                    <a href="#">
+                                        <i class="fa fa-play "></i>
+                                        <span>
+                                   1-5_看望小明
+                               </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                    <div id="note-content" class="list-tab-con">
+                        <div id="noteLoadListData">
+
+                            <div class="course-tool-bar clearfix js-select-state">
+                                <div class="tool-left l js-all-state">
+                                    <a href="javascript:" class="sort-item active">最新</a>
+                                    <a href="javascript:" class="sort-item">最热</a>
+                                </div>
+                                <div class="tool-right r">
+                                    只看我的
+                                </div>
+                            </div>
+                            <div class="course_note">
+                                <ul>
+                                    <li class="post-row js-find-txt" data-id="00002">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <a href="#" class="from">来自：1-1 认识小明</a>
+                                                <div class="notelist-actions">
+                                                    <a href="javascript:" class="fa fa-star jsStart on" data-mid="00001"><em>1</em></a>
+                                                    <a href="javascript:" class="fa fa-heart jsHeart on" data-mid="00001"><em>1</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt" data-id="00001">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="javascript:" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="javascript:" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="ask-content" class="list-tab-con">
+                        <div id="askLoadListData">
+
+                            <div class="course-tool-bar clearfix js-select-state">
+                                <div class="tool-left l js-all-state">
+                                    <a href="javascript:" class="sort-item active">最新</a>
+                                    <a href="javascript:" class="sort-item">最热</a>
+                                </div>
+                                <div class="tool-right r">
+                                    只看我的
+                                </div>
+                            </div>
+                            <div class="course_note">
+                                <ul>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-star jsStart"><em>0</em></a>
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="comment-content" class="list-tab-con">
+                        <div id="commentLoadListData">
+
+                            <div class="iss_ques">
+                                <a href="#" class="user-head l">
+                                    <img src="static/img/member/t.jpg">
+                                </a>
+                                <div class="wgt-ipt-wrap pub-editor-wrap l">
+                                    <textarea id="textComment" title="想说什么就说点吧" placeholder="想说什么就说点吧"></textarea>
+                                    <span class="num-limit"><span id="js-pl-limit">0</span>/300</span>
+                                </div>
+                                <div id="pub-btm" class="pub-btm clearfix">
+                                    <div class="verify-box l js-verify-box comment-verify-box" style="display: block">
+                                        <input class="ipt l" placeholder="请输入验证码">
+                                        <a href="javascript:" class="js-verify-refresh">
+                                            <img src="static/img/captcha.png" data-src="/course/getcoursecommentcode" class="verify-media l">
+                                        </a>
+                                        <span class="verify-help l">看不清
+                                        <a href="javascript:" class="verify-refresh js-verify-refresh">换一换</a>
+                                    </span>
+                                    </div>
+                                    <button type="button" id="js-pl-submit" class="btn pub-btn comment-pub-btn r" data-cid="855" disabled>
+                                    发表评论
+                                </button>
+                                    <span class="errortip r">您还没有填写内容！</span>
+                                </div>
+                            </div>
+                            <div class="course_note">
+                                <ul>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="post-row js-find-txt">
+                                        <div class="notelist_headpic">
+                                            <a href="#">
+                                                <img src="static/img/member/t.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="notelist_content">
+                                            <div class="u_name">
+                                                <a href="#">某位不愿意透露性别的大神</a>
+                                            </div>
+                                            <div class="js-notelist-content notelist-content mynote">
+                                                <pre>这个Java入门太棒了，我想打死老师</pre>
+                                            </div>
+                                            <div class="notelist-bottom clearfix">
+                                                <span class="l timeago">
+                                                2017-07-30
+                                            </span>
+                                                <div class="notelist-actions">
+                                                    <a href="#" class="fa fa-heart jsHeart"><em>0</em></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <aside class="col-md-3 course-sidebar">
+                <h4>
+                    讲师提示
+                </h4>
+                <div class="teacher-info">
+                    <a href="#">
+                        <img src="static/img/member/t.jpg">
+                    </a>
+                    <div class="teacher-info-inner">
+                        <span class="title">
+                    <a href="#">小明</a>
+                    <i class="fa fa-eercast "></i>
+                </span>
+                        <span class="job">
+                    Java 大师
+                </span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </div>
+
+    <!--Footer-->
+    <div class="clear"></div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-link">
+                <a href="#">企业合作</a>
+                <a href="#">人才招聘</a>
+                <a href="#">联系我们</a>
+                <a href="#">常见问题</a>
+                <a href="#">xx科技</a>
+            </div>
+            <div class="footer-copyright">
+                Copyright (C) 2017keac All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/sweetalert.min.js"></script>
+<script src="static/js/script.js"></script>
+<script src="static/js/course-learn.js"></script>
+
+</html>

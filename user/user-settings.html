@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>云课堂</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/css/hover-min.css">
+    <link rel="stylesheet" href="../static/css/sweetalert.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/user.css">
+    <link rel="stylesheet" href="../static/css/user-setting.css" />
+</head>
+
+<body>
+    <!--Header-->
+    <header class="edu-header">
+        <div class="edu-header-inner">
+            <a href="#" class="logo">
+                <img src="../static/img/logo/logo.png">
+            </a>
+            <nav class="header-nav ">
+                <a href="../index.html">首页</a>
+                <a href="../course-list.html">课程</a>
+                <a href="../course-learn.html">内容</a>
+                <a href="../course-video.html">学习</a>
+                <a href="../user">个人中心</a>
+            </nav>
+            <div class="header-search hvr-wobble-skew">
+                <form action="../search.html" class="header-search-form">
+                    <input name="search" class="form-control" title="search" placeholder="你想要的这里都有">
+                    <label class="header-search-ico fa fa-search"></label>
+                </form>
+            </div>
+            <div class="user-info">
+                <div class="shop-cart">
+                    <a href="#" id="shop-cart-link">
+                        <i class="fa fa-shopping-cart" id="shop-cart-icon">
+                        <span class="shopping_icon">0</span>
+                    </i> 购物车
+                    </a>
+                </div>
+                <div class="my-cart" id="shop-cart">
+                    <div class="cart-title-box clearfix">
+                        <h2 class="l">购物车</h2>
+                        <h5 class="r">已加入0门课程</h5>
+                    </div>
+                    <div class="cart-wrap">
+
+                        <!--无物品-->
+
+                        <div class="clear-cart" id="clear-cart" style="display: none">
+                            <span class="fa fa-shopping-cart cartIcon ">
+                        </span>
+                            <h3>
+                                这里好像，没东西诶
+                            </h3>
+                            <div class="text">
+                                快去这里选择你喜欢的课程吧
+                            </div>
+                        </div>
+                        <div class="cart-wrap-box" id="user-info-shop-cart">
+                            <ul>
+                                <li class="clearfix" data-goods-id="1">
+                                    <a href="#"><img class="l" src="../static/img/course/python2.jpg"> </a>
+                                    <div class="content-box l">
+                                        <a href="#">
+                                            <h3>Java入门到放弃</h3>
+                                        </a>
+                                        <p>
+                                            <span class="price l">￥999</span>
+                                            <span class="del r js-close">删除</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more-box clearfix">
+                            <div class="l show-box">
+                                <span class="text"><a href="#">我的订单中心</a></span>
+                            </div>
+                            <a href="#" class="r btn btn-danger go-cart">购物车</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- un login-->
+                <!--<div class="header-signin">-->
+                <!--<a href="login.html">登陆</a> /-->
+                <!--<a href="signup.html">注册</a>-->
+                <!--</div>-->
+
+                <!-- login -->
+                <div class="remind_warp">
+                    <i class="msg_remind" style="display: none;"></i>
+                    <a href="#">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </div>
+                <div class="set_btn user-card-box">
+                    <a href="#" class="user-card-item"><img src="../static/img/member/t.jpg"> </a>
+                </div>
+                <div class="g-user-card">
+                    <div class="card-inner">
+                        <div class="card-top clearfix">
+                            <a href="#" class="l"><img src="../static/img/member/t.jpg"> </a>
+                            <div class="card-top-right-box l">
+                                <a href="#">
+                                    <span class="name text-ellipsis">keac</span>
+                                </a>
+                                <div class="meta">
+                                    <a href="#">
+											经验
+											<b id="js-user-mp">707</b>
+										</a>
+                                    <a href="#">
+											积分
+											<b id="js-user-credit">707</b>
+										</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-center-box">
+                            <ul class="clearfix">
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-book"></span>我的课程
+                                    </a>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-bars"></span> 订单中心
+                                    </a>
+                                    <i id="js-usercard-coupon-icon" style="display: none;"></i>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-truck"></span> 积分商城
+                                    </a>
+                                </li>
+                                <li class="l">
+                                    <a href="#" target="_blank">
+                                        <span class="user-center-icon fa fa-sliders"></span> 个人设置
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-history">
+                            <span class="history-item">
+                            <span class="tit text-ellipsis">Java入门到放弃</span>
+                            <span class="media-name text-ellipsis"> 2-1学习Java入门到放弃
+                            </span>
+                            <i class="fa fa-clock-o"></i>
+                            <a href="#" class="continue" title="学习Java入门到放弃">继续</a>
+                            </span>
+                        </div>
+                        <div class="card-sets clearfix">
+                            <a href="#" class="r">安全退出</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section id="user-settings-main">
+        <div class="settings-cont clearfix">
+            <div class="setting-left l">
+                <div class="avator-wapper">
+                    <div class="avator-mode">
+                        <img class="avator-img" src="//img.mukewang.com/57e8dea800017eee02000200-200-200.jpg" data-portrait="57e8dea800017eee02000200" width="92" height="92">
+                        <div class="update-avator" style="bottom: -30px;">
+                            <p>
+                                <a href="javascript:void(0);" class="js-avator-link">更换头像</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="des-mode">
+                        <p>竞平</p>
+                        <dl class="js-auth-list clearfix auth-list">
+                            <dd><i class="icon-set_sns"></i>
+                                <div class="icon-tips hide">
+                                    <div class="triangle_border_up"><span></span></div>还未实名认证</div>
+                            </dd>
+
+                            <dd><i class="imv2-school"></i>
+                                <div class="icon-tips hide">
+                                    <div class="triangle_border_up"><span></span></div>还未学籍认证</div>
+                            </dd>
+
+                            <dd class="active"><i class="icon-set_phone"></i>
+                                <div class="icon-tips hide">
+                                    <div class="triangle_border_up"><span></span></div>你已绑定手机</div>
+                            </dd>
+                            <dd class="active"><i class="icon-set_email"></i>
+                                <div class="icon-tips hide">
+                                    <div class="triangle_border_up"><span></span></div>你已绑定邮箱</div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <iframe src="about:blank" id="uploadtarget" name="uploadtarget" style="display:none;" frameborder="0"></iframe>
+                <div class="list-wapper">
+                    <h2>账户管理</h2>
+                    <div class="line"></div>
+                    <ul class="menu">
+                        <li>
+                            <a href="/user/setbindsns" class="on">账号绑定<span class="arr"><i class="icon-right2"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="/user/setprofile">个人信息<span class="arr"><i class="icon-right2"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="/user/oplog">操作记录<span class="arr"><i class="icon-right2"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="/user/authenticate">实名认证<span class="arr"><i class="icon-right2"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="/user/certificate">学籍认证<span class="arr"><i class="icon-right2"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="/user/address">收件地址<span class="arr"><i class="icon-right2"></i></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="setting-right">
+                <div class="setting-right-wrap wrap-boxes settings">
+
+                    <div class="page-settings">
+                        <div class="oplog-tip">
+                            上次登录时间：2018-02-09 14:42:55&nbsp;&nbsp;&nbsp;地点：武汉
+                            <a href="/user/oplog">查看最近操作记录</a>
+                            <span class="tip-close pull-right js-tip-close">×</span>
+                        </div>
+                        <div class="common-title">
+                            账号绑定 <span class="title-tips">完成<b class="color-red">4/4</b></span>
+                            <a href="/about/faq" class="pull-right" target="_blank"><i class="icon-ques-revert"></i>常见问题</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="setting">
+                            <div class="contentBox">
+                                <div class="bingd">
+                                    <div class="itemBox">
+                                        <div class="left"> <i class="icon-set_email"></i></div>
+                                        <div class="center">
+                                            <p><span class="font1">邮箱</span>
+                                                <span class="font3">
+                            1102629577@qq.com 
+                                <input class="hide" id="jsMail" value="1102629577@qq.com">已绑定 
+                                                                     
+                            </span>
+                                            </p>
+                                            <p class="font2">可用邮箱加密码登录慕课网，可用邮箱找回密码</p>
+                                        </div>
+                                        <div class="right">
+                                            <a href="javascript:;" class="change js-change moco-btn moco-btn-normal" changetype="email">更改</a>
+                                        </div>
+                                    </div>
+                                    <div class="itemBox">
+                                        <div class="left"> <i class="icon-set_phone"></i></div>
+                                        <div class="center">
+                                            <p> <span class="font1">手机</span> <span class="font4" id="jsPhone">159******79</span></p>
+                                            <p class="font2">可用手机号加密码登录慕课网，可通过手机号找回密码
+                                                <a class="font2" style="text-decoration: underline;" href="//www.imooc.com/about/faq?t=5&amp;id=20" target="_blank">无法绑定</a>
+                                            </p>
+                                        </div>
+                                        <div class="right">
+                                            <a href="javascript:void(0);" class="change js-change-phone moco-btn moco-btn-normal" changetype="phone">更改</a>
+                                            <input id="account" value="159******79" type="hidden">
+                                        </div>
+                                    </div>
+
+                                    <div class="itemBox">
+                                        <div class="left"> <i class="icon-set_key"></i></div>
+                                        <div class="center">
+                                            <p> <span class="font1">密码</span> 已设置</p>
+                                            <p class="font2">用于保护账号信息和登录安全</p>
+                                        </div>
+                                        <div class="right">
+                                            <a href="javascript:void(0);" class="moco-btn moco-btn-normal js-changePWD">修改</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="itemBox bb0 h380">
+                                        <div class="left"> <i class="icon-feedback"></i></div>
+                                        <div class="center">
+                                            <p class="font1">社交帐号</p>
+                                            <p class="font2">绑定第三方帐号，可以直接登录，还可以将内容同步到以下平台，与更多好友分享</p>
+                                            <div class="accountBox">
+                                                <div class="inner-i-box">
+                                                    <i class="icon-weixin"></i>
+                                                    <p class="mr87 bind-name">微信</p>
+                                                    <p class="mr87 red">未绑定</p>
+                                                    <a href="/passport/user/tplogin?tp=weixin&amp;bind=1" aria-role="button" hidefocus="true" class="moco-btn-normal rlf-btn-green btn js-bind mr87">添加绑定</a>
+                                                </div>
+                                                <div class="inner-i-box">
+                                                    <i class="icon-weibo"></i>
+                                                    <p class="mr87 bind-name">微博</p>
+                                                    <p class="mr87 red">未绑定</p>
+                                                    <a href="/passport/user/tplogin?tp=weibo&amp;bind=1" aria-role="button" hidefocus="true" class="moco-btn-normal rlf-btn-green btn js-bind mr87">添加绑定</a>
+
+                                                </div>
+                                                <div class="inner-i-box">
+                                                    <i class="icon-qq color_blue"></i>
+                                                    <p class="mr87 bind-name">QQ</p>
+                                                    <p class="mr87 bind-status">已绑定 </p>
+                                                    <a data-unbind="qq" class="moco-btn-normal rlf-btn-green btn mr87" href="javascript:void(0)">解除绑定</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right"> </div>
+                                        <div class="cb"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        var hasPass;
+                        hasPass = true;
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-link">
+                <a href="#">企业合作</a>
+                <a href="#">人才招聘</a>
+                <a href="#">联系我们</a>
+                <a href="#">常见问题</a>
+                <a href="#">xx科技</a>
+            </div>
+            <div class="footer-copyright">
+                Copyright (C) 2017keac All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/owl.carousel.min.js"></script>
+<script src="../static/js/sweetalert.min.js"></script>
+<script src="../static/js/script.js"></script>
+
+</html>
